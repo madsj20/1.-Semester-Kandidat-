@@ -38,7 +38,7 @@ public class BoxHandler : MonoBehaviour
             heightText = height.ToString("0.00"),
             depthText = depth.ToString("0.00");
 
-        volumeDisplay.text = $"Kassens volumen:\nV = h * l * b\n{heightText} * {widthText} * {depthText} = {volumeText}";
+        volumeDisplay.text = $"Kassens volumen: V = h * l * b\n{heightText} * {widthText} * {depthText} = {volumeText}";
 
         surfaceAreaDisplay.text = "Kassens overfladeareal:\nA = 2 * (h * l + h * b + l * b)\n" +
             $"2 * ({heightText} * {widthText} + {heightText} * {depthText} + {widthText} * {depthText}) = {surfaceAreaText}";
