@@ -10,6 +10,7 @@ public class BoxHandler : MonoBehaviour
     public TextMeshProUGUI volumeDisplay, surfaceAreaDisplay;
 
     private float width = 1, height = 1, depth = 1;
+    private float volume, surfaceArea;
 
     void Start()
     {
@@ -17,13 +18,13 @@ public class BoxHandler : MonoBehaviour
         heightSlider.onValueChanged.AddListener((value) => { UpdateValues(value, "height"); });
         depthSlider.onValueChanged.AddListener((value) => { UpdateValues(value, "depth"); });
 
-        UpdateBox();
+        UpdateUI();
     }
 
     void UpdateDimensions()
     {
-        float volume = width * height * depth;
-        float surfaceArea = (width * height + width * depth + height * depth) * 2;
+        volume = width * height * depth;
+        surfaceArea = (width * height + width * depth + height * depth) * 2;
 
         transform.localScale = new Vector3(width, height, depth);
     }
