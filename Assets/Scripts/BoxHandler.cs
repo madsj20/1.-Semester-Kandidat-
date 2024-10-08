@@ -2,36 +2,63 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoxHandler : MonoBehaviour
 {
-    public GameObject widthSlider, heightSlider, depthSlider;
+    public Slider widthSlider, heightSlider, depthSlider;
     public TextMeshProUGUI volumeDisplay, surfaceAreaDisplay;
 
-    public float sliderMinimum, sliderMaximum;
+    private float width = 1, height = 1, depth = 1;
 
-    public float scaleMultiplyer;
-
-    private float width, height, depth;
-    private float volume, surfaceArea;
-
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
+        widthSlider.onValueChanged.AddListener((value) =>  { UpdateValues(value, "width"); });
+        heightSlider.onValueChanged.AddListener((value) => { UpdateValues(value, "height"); });
+        depthSlider.onValueChanged.AddListener((value) => { UpdateValues(value, "depth"); });
 
         UpdateBox();
     }
 
-    void UpdateBox()
+    void UpdateDimensions()
     {
-        volume = width * height * depth;
-        surfaceArea = (width * height + width * depth + height * depth) * 2;
-
-        volumeDisplay.text = $"Kassens volumen V = h * l * b = {height} * {width} * {depth} = {volume}";
-
-        surfaceAreaDisplay.text = "Kassens overfladeareal A = 2 * (h * l + h * b + l * B) = " +
-            $"2 * ({height} * {width} + {height} * {depth} + {width} * {depth}) = {volume}";
+        float volume = width * height * depth;
+        float surfaceArea = (width * height + width * depth + height * depth) * 2;
 
         transform.localScale = new Vector3(width, height, depth);
+    }
+
+    void UpdateUI()
+    {
+        string volumeText = volume.ToString("0.00"),
+            surfaceAreaText = surfaceArea.ToString("0.00");
+
+        string widthText = width.ToString("0.00"),
+            heightText = height.ToString("0.00"),
+            depthText = depth.ToString("0.00");
+
+        volumeDisplay.text = $"Kassens volumen:\nV = h * l * b\n{heightText} * {widthText} * {depthText} = {volumeText}";
+
+        surfaceAreaDisplay.text = "Kassens overfladeareal:\nA = 2 * (h * l + h * b + l * b)\n" +
+            $"2 * ({heightText} * {widthText} + {heightText} * {depthText} + {widthText} * {depthText}) = {surfaceAreaText}";
+    }
+
+    void UpdateValues(float value, string dimension)
+    {
+        switch (dimension)
+        {
+            case "width":
+                width = value;
+                break;
+            case "height":
+                height = value;
+                break;
+            case "depth":
+                depth = value;
+                break;
+        }
+
+        UpdateDimensions();
+        UpdateUI();
     }
 }
