@@ -18,7 +18,7 @@ public class ShapeUI : MonoBehaviour
     {
         GameObject canvasClone = Instantiate<GameObject>(canvas);
         //set canvas parent to current GameObject
-        canvasClone.transform.parent = transform;
+        canvasClone.transform.parent = transform.parent;
         //set target camera
         canvasClone.GetComponent<Canvas>().worldCamera = Camera.main;
         //set size of canvas appropriately
@@ -31,10 +31,12 @@ public class ShapeUI : MonoBehaviour
         xText = canvasClone.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         yText = canvasClone.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         zText = canvasClone.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+        
         //move texts to appropriate positions
-        xText.gameObject.transform.localPosition = new Vector3(0, -transform.localScale.y/2 - 0.1f, 0);
+        /*xText.gameObject.transform.localPosition = new Vector3(0, -transform.localScale.y/2 - 0.1f, 0);
         yText.gameObject.transform.localPosition = new Vector3(transform.localScale.x / 2 + 0.1f, 0, 0);
         zText.gameObject.transform.localPosition = new Vector3(transform.localScale.x / 2 + 0.1f, -transform.localScale.y / 2 - 0.1f, transform.localScale.z / 2);
+*/
     }
 
     // Update is called once per frame
@@ -44,6 +46,9 @@ public class ShapeUI : MonoBehaviour
         xText.text = transform.localScale.x.ToString();
         yText.text = transform.localScale.y.ToString();
         zText.text = transform.localScale.z.ToString();
+        xText.transform.position = transform.GetChild(0).position;
+        yText.transform.position = transform.GetChild(1).position;
+        zText.transform.position = transform.GetChild(2).position;
 
     }
 }
