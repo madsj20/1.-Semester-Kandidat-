@@ -45,11 +45,11 @@ public class CubeHandler : MonoBehaviour
         surfaceArea = (width * height + width * depth + height * depth) * 2;
 
         cube.transform.localScale = new Vector3(width, height, depth);
-        cube.transform.position = new Vector3(cube.transform.position.x, cube.transform.localScale.y / 2 - 0.5f, cube.transform.position.z);
+        cube.transform.localPosition = new Vector3(cube.transform.localPosition.x, cube.transform.localScale.y / 2 - 0.5f, cube.transform.localPosition.z);
 
-        widthText.transform.position = new Vector3(0, -0.5f - buffer, -depth / 2 - buffer);
-        heightText.transform.position = new Vector3(width / 2 + buffer, height / 2 - 0.5f, -depth / 2 - buffer);
-        depthText.transform.position = new Vector3(width / 2 + buffer, -0.5f - buffer, 0);
+        widthText.transform.localPosition = new Vector3(0, -0.5f - buffer, -depth / 2 - buffer);
+        heightText.transform.localPosition = new Vector3(width / 2 + buffer, height / 2 - 0.5f, -depth / 2 - buffer);
+        depthText.transform.localPosition = new Vector3(width / 2 + buffer, -0.5f - buffer, 0);
     }
 
     void UpdateUI()
