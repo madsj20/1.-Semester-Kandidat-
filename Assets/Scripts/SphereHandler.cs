@@ -43,9 +43,9 @@ public class SphereHandler : MonoBehaviour
         surfaceArea = 4 * Mathf.PI * Mathf.Pow(radius, 2);
 
         sphere.transform.localScale = new Vector3(radius, radius, radius);
-        sphere.transform.position = new Vector3(sphere.transform.position.x, sphere.transform.localScale.y / 2 - 0.5f, sphere.transform.position.z);
+        sphere.transform.localPosition = new Vector3(sphere.transform.localPosition.x, sphere.transform.localScale.y / 2 - 0.5f, sphere.transform.localPosition.z);
 
-        radiusText.transform.position = new Vector3(radius / 2 + buffer, radius / 2 -0.5f, 0);
+        radiusText.transform.localPosition = new Vector3(radius / 2 + buffer, radius / 2 -0.5f, 0);
     }
 
     void UpdateUI()

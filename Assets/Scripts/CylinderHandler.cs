@@ -44,10 +44,10 @@ public class CylinderHandler : MonoBehaviour
         surfaceArea = 2 * Mathf.PI * radius * (height + radius);
 
         cylinder.transform.localScale = new Vector3(radius, height / 2, radius);
-        cylinder.transform.position = new Vector3(cylinder.transform.position.x, cylinder.transform.localScale.y -1, cylinder.transform.position.z);
+        cylinder.transform.localPosition = new Vector3(cylinder.transform.localPosition.x, cylinder.transform.localScale.y -1, cylinder.transform.localPosition.z);
 
-        radiusText.transform.position = new Vector3(radius / 4, height + buffer - 1, 0);
-        heightText.transform.position = new Vector3(radius / 2 + buffer, height / 2 - 1, 0);
+        radiusText.transform.localPosition = new Vector3(radius / 4, height + buffer - 1, 0);
+        heightText.transform.localPosition = new Vector3(radius / 2 + buffer, height / 2 - 1, 0);
     }
 
     void UpdateUI()
