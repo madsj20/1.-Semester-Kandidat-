@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
-    <ImageTarget name="kugle" size="1.000000 0.666667" />
-    <ImageTarget name="kube" size="1.000000 0.666667" />
-    <ImageTarget name="cylinder" size="1.000000 0.666667" />
+    <ImageTarget name="kuglepng" size="1.000000 0.666667" />
+    <ImageTarget name="kubepng" size="1.000000 0.666667" />
+    <ImageTarget name="cylinderpng" size="1.000000 0.666667" />
+    <ImageTarget name="Kugle" size="1.000000 0.752000" />
+    <ImageTarget name="Kube" size="1.000000 0.752000" />
+    <ImageTarget name="Cylinder" size="1.000000 0.752000" />
     <ImageTarget name="417690111_6959813084104007_8170457351006616467_n" size="0.100000 0.101053" />
   </Tracking>
 </QCARConfig>

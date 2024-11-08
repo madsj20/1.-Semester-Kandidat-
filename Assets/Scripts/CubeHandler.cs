@@ -45,10 +45,11 @@ public class CubeHandler : MonoBehaviour
         surfaceArea = (width * height + width * depth + height * depth) * 2;
 
         cube.transform.localScale = new Vector3(width, height, depth);
+        cube.transform.localPosition = new Vector3(cube.transform.localPosition.x, cube.transform.localScale.y / 2 - 0.5f, cube.transform.localPosition.z);
 
-        widthText.transform.position = new Vector3(0, -height / 2 - buffer, -depth / 2 - buffer);
-        heightText.transform.position = new Vector3(width / 2 + buffer, 0, -depth / 2 - buffer);
-        depthText.transform.position = new Vector3(width / 2 + buffer, -height / 2 - buffer, 0);
+        widthText.transform.localPosition = new Vector3(0, -0.5f - buffer, -depth / 2 - buffer);
+        heightText.transform.localPosition = new Vector3(width / 2 + buffer, height / 2 - 0.5f, -depth / 2 - buffer);
+        depthText.transform.localPosition = new Vector3(width / 2 + buffer, -0.5f - buffer, 0);
     }
 
     void UpdateUI()
@@ -56,9 +57,9 @@ public class CubeHandler : MonoBehaviour
         string volumeText = volume.ToString("0.00"),
             surfaceAreaText = surfaceArea.ToString("0.00");
 
-        widthText.text = width.ToString("0.00");
-        heightText.text = height.ToString("0.00");
-        depthText.text = depth.ToString("0.00");
+        widthText.text = "l = " + width.ToString("0.00");
+        heightText.text = "h = " + height.ToString("0.00");
+        depthText.text = "b = " + depth.ToString("0.00");
 
         volumeDisplay.text = $"Kassens volumen: V = h * l * b\n{heightText.text} * {widthText.text} * {depthText.text} = {volumeText}";
 
