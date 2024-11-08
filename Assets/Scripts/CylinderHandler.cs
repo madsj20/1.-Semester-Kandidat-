@@ -14,7 +14,7 @@ public class CylinderHandler : MonoBehaviour
     public TextMeshProUGUI volumeDisplay, surfaceAreaDisplay;
     public TextMeshProUGUI radiusText, heightText;
 
-    private float radius = 0.5f, height = 1;
+    private float radius = 1, height = 2;
     private float volume, surfaceArea;
 
     void Start()
@@ -43,10 +43,11 @@ public class CylinderHandler : MonoBehaviour
         volume = height * Mathf.PI * Mathf.Pow(radius, 2f);
         surfaceArea = 2 * Mathf.PI * radius * (height + radius);
 
-        cylinder.transform.localScale = new Vector3(radius * 2, height, radius * 2);
+        cylinder.transform.localScale = new Vector3(radius, height / 2, radius);
+        cylinder.transform.position = new Vector3(cylinder.transform.position.x, cylinder.transform.localScale.y -1, cylinder.transform.position.z);
 
-        radiusText.transform.position = new Vector3(radius / 2, height + buffer, 0);
-        heightText.transform.position = new Vector3(radius + buffer, 0, 0);
+        radiusText.transform.position = new Vector3(radius / 4, height + buffer - 1, 0);
+        heightText.transform.position = new Vector3(radius / 2 + buffer, height / 2 - 1, 0);
     }
 
     void UpdateUI()
@@ -67,10 +68,10 @@ public class CylinderHandler : MonoBehaviour
         switch (dimension)
         {
             case "radius":
-                radius = value / 2;
+                radius = value;
                 break;
             case "height":
-                height = value;
+                height = value * 2;
                 break;
         }
 
