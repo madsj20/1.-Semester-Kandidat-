@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="kubeqr" size="1.000000 0.666667" />
+    <ImageTarget name="kugleqr" size="1.000000 0.666667" />
+    <ImageTarget name="cylinderqr" size="1.000000 0.666667" />
+    <ImageTarget name="kugleimage" size="1.000000 0.670614" />
+    <ImageTarget name="cylinderimage" size="1.000000 0.673891" />
+    <ImageTarget name="cubeimage" size="1.000000 0.674814" />
+    <ImageTarget name="kuglev2" size="1.000000 0.666667" />
+    <ImageTarget name="kubev2" size="1.000000 0.666667" />
+    <ImageTarget name="cylinderv2" size="1.000000 0.666667" />
     <ImageTarget name="kuglepng" size="1.000000 0.666667" />
     <ImageTarget name="kubepng" size="1.000000 0.666667" />
     <ImageTarget name="cylinderpng" size="1.000000 0.666667" />
