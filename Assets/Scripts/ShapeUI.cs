@@ -100,7 +100,7 @@ public class ShapeUI : MonoBehaviour
         zText.transform.position = transform.GetChild(2).position;
 
         transform.localScale = new Vector3(transform.localScale.x,transform.localScale.y,transform.localScale.x);
-        //transform.position = new Vector3(transform.position.x, transform.position.y + transform.localScale.y - 1, transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.localScale.y, transform.position.z);
     }
     void SphereUpdate()
     {
