@@ -10,12 +10,20 @@ public class CubeHandler : MonoBehaviour
 
     public GameObject cube, worldCanvas;
 
-    public Slider widthSlider, heightSlider, depthSlider;
+    public Slider heightSlider, lengthSlider, widthSlider;
     public TextMeshProUGUI volumeDisplay, surfaceAreaDisplay;
-    public TextMeshProUGUI widthText, heightText, depthText;
+    public TextMeshProUGUI heightText, lengthText, widthText;
 
-    private float width = 1, height = 1, depth = 1;
+    private float height = 1, length = 1, width = 1;
     private float volume, surfaceArea;
+
+    private const string H_COLOR = "#00ff00ff";
+    private const string L_COLOR = "#0000ffff";
+    private const string B_COLOR = "#ff0000ff";
+
+    private string h = $"<color={H_COLOR}>h</color>";
+    private string l = $"<color={L_COLOR}>l</color>";
+    private string b = $"<color={B_COLOR}>b</color>";
 
     void Start()
     {
@@ -34,22 +42,22 @@ public class CubeHandler : MonoBehaviour
 
     void SetupSliders()
     {
-        widthSlider.onValueChanged.AddListener((value) => { UpdateValues(value, "width"); });
         heightSlider.onValueChanged.AddListener((value) => { UpdateValues(value, "height"); });
-        depthSlider.onValueChanged.AddListener((value) => { UpdateValues(value, "depth"); });
+        lengthSlider.onValueChanged.AddListener((value) => { UpdateValues(value, "length"); });
+        widthSlider.onValueChanged.AddListener((value) => { UpdateValues(value, "width"); });
     }
 
     void UpdateDimensions()
     {
-        volume = width * height * depth;
-        surfaceArea = (width * height + width * depth + height * depth) * 2;
+        volume = height * length * width;
+        surfaceArea = (height * length + height * width + length * width) * 2;
 
-        cube.transform.localScale = new Vector3(width, height, depth);
+        cube.transform.localScale = new Vector3(width, height, length);
         cube.transform.localPosition = new Vector3(cube.transform.localPosition.x, cube.transform.localScale.y / 2 - 0.5f, cube.transform.localPosition.z);
 
-        widthText.transform.localPosition = new Vector3(0, -0.5f - buffer, -depth / 2 - buffer);
-        heightText.transform.localPosition = new Vector3(width / 2 + buffer, height / 2 - 0.5f, -depth / 2 - buffer);
-        depthText.transform.localPosition = new Vector3(width / 2 + buffer, -0.5f - buffer, 0);
+        heightText.transform.localPosition = new Vector3(width / 2 + buffer, height / 2 - 0.5f, -length / 2 - buffer);
+        lengthText.transform.localPosition = new Vector3(width / 2 + buffer, -0.5f - buffer, 0);
+        widthText.transform.localPosition = new Vector3(0, -0.5f - buffer, -length / 2 - buffer); 
     }
 
     void UpdateUI()
@@ -57,28 +65,27 @@ public class CubeHandler : MonoBehaviour
         string volumeText = volume.ToString("0.00"),
             surfaceAreaText = surfaceArea.ToString("0.00");
 
-        widthText.text = "l = " + width.ToString("0.00");
-        heightText.text = "h = " + height.ToString("0.00");
-        depthText.text = "b = " + depth.ToString("0.00");
+        heightText.text = $"<color={H_COLOR}>{height.ToString("0.00")}</color>";
+        lengthText.text = $"<color={L_COLOR}>{length.ToString("0.00")}</color>";
+        widthText.text = $"<color={B_COLOR}>{width.ToString("0.00")}</color>";
 
-        volumeDisplay.text = $"Kassens volumen: V = h * l * b\n{heightText.text} * {widthText.text} * {depthText.text} = {volumeText}";
+        volumeDisplay.text = $"Rumfang:\nV = {h} * {l} * {b} = {volumeText}";
 
-        surfaceAreaDisplay.text = "Kassens overfladeareal:\nA = 2 * (h * l + h * b + l * b)\n" +
-            $"2 * ({heightText.text} * {widthText.text} + {heightText.text} * {depthText.text} + {widthText.text} * {depthText.text}) = {surfaceAreaText}";
+        surfaceAreaDisplay.text = $"Overfladeareal:\nA = 2 * ({h} * {l} + {h} * {b} + {l} * {b}) = {surfaceAreaText}";
     }
 
     void UpdateValues(float value, string dimension)
     {
         switch (dimension)
         {
-            case "width":
-                width = value;
-                break;
             case "height":
                 height = value;
                 break;
-            case "depth":
-                depth = value;
+            case "length":
+                length = value;
+                break;
+            case "width":
+                width = value;
                 break;
         }
 
