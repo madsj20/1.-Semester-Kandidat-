@@ -17,6 +17,12 @@ public class CylinderHandler : MonoBehaviour
     private float radius = 1, height = 2;
     private float volume, surfaceArea;
 
+    private const string R_COLOR = "#FE5CA2";
+    private const string H_COLOR = "#06c8c0";
+
+    private string r = $"<color={R_COLOR}>r</color>";
+    private string h = $"<color={H_COLOR}>h</color>";
+
     void Start()
     {
         SetupWorldCanvas();
@@ -55,12 +61,12 @@ public class CylinderHandler : MonoBehaviour
         string volumeText = volume.ToString("0.00"),
             surfaceAreaText = surfaceArea.ToString("0.00");
 
-        radiusText.text = radius.ToString("0.00");
-        heightText.text = height.ToString("0.00");
+        radiusText.text = $"<color={R_COLOR}>{radius.ToString("0.00")}</color>";
+        heightText.text = $"<color={H_COLOR}>{height.ToString("0.00")}</color>";
 
-        volumeDisplay.text = $"Cylenderets volumen:\nV = h * π * r^2\n{heightText.text} * π * {radiusText.text}^2 = {volumeText}";
+        volumeDisplay.text = $"Rumfang:\nV = {h} * π * {r}^2 = {volumeText}";
 
-        surfaceAreaDisplay.text = $"Cylenderets overfladeareal:\nA = 2 * π * r * (h + r)\n2 * π * {radiusText.text} * ({heightText.text} + {radiusText.text}) = {surfaceAreaText}";
+        surfaceAreaDisplay.text = $"Overfladeareal:\nA = 2 * π * {r} * ({h} + {r}) = {surfaceAreaText}";
     }
 
     void UpdateValues(float value, string dimension)
