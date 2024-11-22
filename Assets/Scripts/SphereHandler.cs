@@ -17,6 +17,10 @@ public class SphereHandler : MonoBehaviour
     private float radius = 1;
     private float volume, surfaceArea;
 
+    private const string R_COLOR = "#ffbf4f";
+
+    private string r = $"<color={R_COLOR}>r</color>";
+
     void Start()
     {
         SetupWorldCanvas();
@@ -53,11 +57,11 @@ public class SphereHandler : MonoBehaviour
         string volumeText = volume.ToString("0.00"),
             surfaceAreaText = surfaceArea.ToString("0.00");
 
-        radiusText.text = radius.ToString("0.00");
+        radiusText.text = $"<color={R_COLOR}>{radius.ToString("0.00")}</color>";
 
-        volumeDisplay.text = $"Kuglens volumen: V = 4 / 3 * π * r^3\n3 / 4 * π * {radiusText.text}^3 = {volumeText}";
+        volumeDisplay.text = $"Rumfang: V = 4 / 3 * π * {r}^3 = {volumeText}";
 
-        surfaceAreaDisplay.text = $"Kuglens overfladeareal:\nA = 4 * π * r^2\n4 * π * {radiusText.text}^2 = {surfaceAreaText}";
+        surfaceAreaDisplay.text = $"Overfladeareal:\nA = 4 * π * {r}^2 = {surfaceAreaText}";
     }
 
     void UpdateValues(float value)
