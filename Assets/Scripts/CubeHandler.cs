@@ -17,9 +17,9 @@ public class CubeHandler : MonoBehaviour
     private float height = 1, length = 1, width = 1;
     private float volume, surfaceArea;
 
-    private const string H_COLOR = "#00ff00ff";
-    private const string L_COLOR = "#0000ffff";
-    private const string B_COLOR = "#ff0000ff";
+    private const string H_COLOR = "#15EC15ff";
+    private const string L_COLOR = "#4040FBff";
+    private const string B_COLOR = "#EC2E2Eff";
 
     private string h = $"<color={H_COLOR}>h</color>";
     private string l = $"<color={L_COLOR}>l</color>";
@@ -62,12 +62,12 @@ public class CubeHandler : MonoBehaviour
 
     void UpdateUI()
     {
-        string volumeText = volume.ToString("0.00"),
-            surfaceAreaText = surfaceArea.ToString("0.00");
+        string volumeText = volume.ToString("0.0"),
+            surfaceAreaText = surfaceArea.ToString("0.0");
 
-        heightText.text = $"<color={H_COLOR}>{height.ToString("0.00")}</color>";
-        lengthText.text = $"<color={L_COLOR}>{length.ToString("0.00")}</color>";
-        widthText.text = $"<color={B_COLOR}>{width.ToString("0.00")}</color>";
+        heightText.text = $"<color={H_COLOR}>{height.ToString("0.0")}</color>";
+        lengthText.text = $"<color={L_COLOR}>{length.ToString("0.0")}</color>";
+        widthText.text = $"<color={B_COLOR}>{width.ToString("0.0")}</color>";
 
         volumeDisplay.text = $"Rumfang:\nV = {h} * {l} * {b} = {volumeText}";
 
