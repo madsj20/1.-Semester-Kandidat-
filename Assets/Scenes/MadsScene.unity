@@ -255,6 +255,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 555107743168658520, guid: d8d4e0162ccfc3e419ff5dd9ad81a53c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.495
+      objectReference: {fileID: 0}
+    - target: {fileID: 555107743168658520, guid: d8d4e0162ccfc3e419ff5dd9ad81a53c, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
@@ -854,15 +858,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4013471351043190139, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1358120708}
-    - targetCorrespondingSourceObject: {fileID: 2331876706458627993, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 883448798}
     - targetCorrespondingSourceObject: {fileID: 4704948144645734707, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2138538252}
     - targetCorrespondingSourceObject: {fileID: 2727587248893654764, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1610209334}
+    - targetCorrespondingSourceObject: {fileID: 2331876706458627993, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 883448798}
   m_SourcePrefab: {fileID: 100100000, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
 --- !u!4 &1358120706 stripped
 Transform:
