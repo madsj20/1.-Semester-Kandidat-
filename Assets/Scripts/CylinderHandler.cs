@@ -14,7 +14,7 @@ public class CylinderHandler : MonoBehaviour
     public TextMeshProUGUI volumeDisplay, surfaceAreaDisplay;
     public TextMeshProUGUI radiusText, heightText;
 
-    private float radius = 1, height = 2;
+    private float radius = 1, height = 1;
     private float volume, surfaceArea;
 
     private const string R_COLOR = "#FE5CA2";
@@ -50,19 +50,19 @@ public class CylinderHandler : MonoBehaviour
         surfaceArea = 2 * Mathf.PI * radius * (height + radius);
 
         cylinder.transform.localScale = new Vector3(radius, height / 2, radius);
-        cylinder.transform.localPosition = new Vector3(cylinder.transform.localPosition.x, cylinder.transform.localScale.y -1, cylinder.transform.localPosition.z);
+        cylinder.transform.localPosition = new Vector3(cylinder.transform.localPosition.x, cylinder.transform.localScale.y - 0.5f, cylinder.transform.localPosition.z);
 
-        radiusText.transform.localPosition = new Vector3(radius / 4, height + buffer - 1, 0);
-        heightText.transform.localPosition = new Vector3(radius / 2 + buffer, height / 2 - 1, 0);
+        radiusText.transform.localPosition = new Vector3(radius / 4, height + buffer - 0.5f, 0);
+        heightText.transform.localPosition = new Vector3(radius / 2 + buffer, height / 2 - 0.5f, 0);
     }
 
     void UpdateUI()
     {
-        string volumeText = volume.ToString("0.00"),
-            surfaceAreaText = surfaceArea.ToString("0.00");
+        string volumeText = volume.ToString("0.0"),
+            surfaceAreaText = surfaceArea.ToString("0.0");
 
-        radiusText.text = $"<color={R_COLOR}>{radius.ToString("0.00")}</color>";
-        heightText.text = $"<color={H_COLOR}>{height.ToString("0.00")}</color>";
+        radiusText.text = $"<color={R_COLOR}>{radius.ToString("0.0")}</color>";
+        heightText.text = $"<color={H_COLOR}>{height.ToString("0.0")}</color>";
 
         volumeDisplay.text = $"Rumfang:\nV = {h} * π * {r}^2 = {volumeText}";
 
@@ -77,7 +77,7 @@ public class CylinderHandler : MonoBehaviour
                 radius = value;
                 break;
             case "height":
-                height = value * 2;
+                height = value;
                 break;
         }
 

@@ -463,15 +463,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 488918266411507586, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 770996336120049638, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
       propertyPath: m_Name
       value: CubeMaster
       objectReference: {fileID: 0}
+    - target: {fileID: 770996336120049638, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1099493971515044732, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3347471970988675577, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
       propertyPath: m_LocalPosition.x
@@ -515,11 +519,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4087037386510073611, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6989392236305880962, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7404107803297395491, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
       propertyPath: m_Camera
@@ -527,11 +531,11 @@ PrefabInstance:
       objectReference: {fileID: 180913203}
     - target: {fileID: 7404281017735347470, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7827126251291217880, guid: 5eff858865d10e24a8885d199fb5bb22, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -588,11 +592,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3746851251612250972, guid: b3804924f5bae02418b7a10c66043ac5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3895352873218424902, guid: b3804924f5bae02418b7a10c66043ac5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6343190935009610614, guid: b3804924f5bae02418b7a10c66043ac5, type: 3}
       propertyPath: m_Camera
@@ -601,6 +605,10 @@ PrefabInstance:
     - target: {fileID: 8831317020294795095, guid: b3804924f5bae02418b7a10c66043ac5, type: 3}
       propertyPath: m_Name
       value: SphereMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831317020294795095, guid: b3804924f5bae02418b7a10c66043ac5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

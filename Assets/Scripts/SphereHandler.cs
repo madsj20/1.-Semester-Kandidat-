@@ -54,10 +54,10 @@ public class SphereHandler : MonoBehaviour
 
     void UpdateUI()
     {
-        string volumeText = volume.ToString("0.00"),
-            surfaceAreaText = surfaceArea.ToString("0.00");
+        string volumeText = volume.ToString("0.0"),
+            surfaceAreaText = surfaceArea.ToString("0.0");
 
-        radiusText.text = $"<color={R_COLOR}>{radius.ToString("0.00")}</color>";
+        radiusText.text = $"<color={R_COLOR}>{radius.ToString("0.0")}</color>";
 
         volumeDisplay.text = $"Rumfang: V = 4 / 3 * π * {r}^3 = {volumeText}";
 
