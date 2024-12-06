@@ -258,8 +258,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.2
-  m_fontSizeBase: 0.2
+  m_fontSize: 0.3
+  m_fontSizeBase: 0.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1160,7 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9bf5287ae242f944b47cc79485b1586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buffer: 0.1
+  buffer: 0.2
   sphere: {fileID: 5524637855925393196}
   worldCanvas: {fileID: 8561894337972962289}
   radiusSlider: {fileID: 7482672970298104767}
